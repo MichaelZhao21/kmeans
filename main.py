@@ -6,6 +6,8 @@ import pandas as pd
 
 DATASET_URL = "https://archive.ics.uci.edu/static/public/438/health+news+in+twitter.zip"
 PATH = "data/Health-Tweets/"
+
+FILE_USED = "cnnhealth.txt"
 K_VALS = [5, 10, 15, 20, 25, 50, 100, 250, 1000]
 
 def download_data():
@@ -24,7 +26,7 @@ def download_data():
 def main():
     # Download data and create model
     download_data()
-    model = KMeans(PATH + "cnnhealth.txt")
+    model = KMeans(PATH + FILE_USED)
 
     # Run tests
     cluster_counts = []
